@@ -1,0 +1,59 @@
+mat-sidenav-container{
+    height: calc(100vh - 65px);
+}
+.logo{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #76CCFB;
+    padding: 5px;
+    margin-top: 10px;
+    color: rgb(15,33,54);
+    font-weight: bold;
+    margin-left: 5px;
+}
+mat-sidenav{
+    margin: 16px;
+    border-radius: 10px;
+    width: 200px;
+    border-right: none;
+    background:rgb(15,33,54);
+    color: white;
+    padding: 16px;
+    text-align: center;
+
+
+}
+.content{
+    display: flex;
+    margin: 16px;
+    max-height:calc(90vh - 98px);
+    margin-left: 35px;
+    color: black;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    overflow: auto;
+    
+  
+}
+.menu-btn{
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1rem;
+    mat-icon{
+        margin-right: 8px;
+    }
+}
+// .player{
+//     width: 100%; 
+//     background-color: #f9f9f9;
+// }
+//  audio::-webtik-media-controls-enclosure{
+//     background: none;
+    
+// }
+
+  
+  

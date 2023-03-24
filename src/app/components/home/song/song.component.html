@@ -1,0 +1,77 @@
+<div class="content mat-elevation-z4">
+  <mat-tab-group class="tab-group" color="accent">
+    <mat-tab class="mat-tab" label="Popular">
+      <div class="content1">
+        <div
+          class="songslist"
+          *ngFor="let song of onlineSongs"
+          (click)="PlaySong(song.url)">
+          <div class="cover">
+            <img
+              width="170px"
+              height="180px"
+              src="{{ song.cover }}"
+              alt="cover"
+            />
+          </div>
+          <div class="title">
+            <h3>{{ song.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Trending">
+      <div class="content1">
+        <div
+          class="songslist"
+          *ngFor="let song of onlineSongs"
+          (click)="PlaySong(song.url)"
+        >
+          <div class="cover">
+            <img
+              width="170px"
+              height="180px"
+              src="{{ song.cover }}"
+              alt="cover"
+            />
+          </div>
+          <div class="title">
+            <h3>{{ song.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="New Release">
+      <div class="content1">
+        <div
+          class="songslist"
+          *ngFor="let song of onlineSongs"
+          (click)="PlaySong(song.url)"
+        >
+          <div class="cover">
+            <img
+              width="170px"
+              height="180px"
+              src="{{ song.cover }}"
+              alt="cover"
+            />
+          </div>
+          <div class="title">
+            <h3>{{ song.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<div class="player">
+  <audio
+    controls
+    #audioPlayers
+    autoplay
+    style="width: 90%; margin-left: 70px; outline: none"
+  >
+    <source src="{{ audioSource }}" />
+  </audio>
+</div>

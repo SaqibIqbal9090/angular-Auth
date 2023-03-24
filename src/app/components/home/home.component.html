@@ -1,0 +1,41 @@
+<mat-toolbar
+  class="example-toolbar"
+  style="background: rgb(15, 33, 54); color: white"
+>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  <h1 class="logo">Musion</h1>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened #sidenav="matSidenav">
+    <button mat-button color="basic" class="menu-btn" [routerLink]="[{ outlets: { homeoutlet: 'songs' } }]">
+      <mat-icon>home</mat-icon>
+      <span>Songs</span>
+    </button>
+
+    <button mat-button color="basic" class="menu-btn">
+      <mat-icon>settings_applications</mat-icon>
+      <span>Settings</span>
+    </button>
+
+    <button mat-button color="basic" class="menu-btn"  routerLink="about" [routerLink]="[{ outlets: { homeoutlet: 'about' } }]">
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+
+    <button mat-button color="basic" class="menu-btn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  <router-outlet name="homeoutlet"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

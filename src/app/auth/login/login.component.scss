@@ -1,0 +1,140 @@
+.container{
+  width: 100%;
+  height: 100%;
+}
+.introbox{
+  width: 100%;
+  height: 80px;
+  background-color: #0F1E36;
+  display: flex;
+  justify-content:space-between;
+  .logo{
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 10%;
+    h1{
+      font-size: 30px;
+      color: #0F1E36;
+      background-color: #76CCFB;
+      padding: 10px;
+      width: fit-content;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+  }
+  .intro{
+    width: 45%;
+    margin-top: 20px;
+    h1{
+      font-size: 15px;
+      color:  #76CCFB;
+      max-width: 100%;
+    }
+  }
+ 
+}
+.login{
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+}
+
+
+
+
+form{
+  min-width: 20%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background-color:   rgba(15,33,54,0.8);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color:	
+    rgb(15,33,54);
+    color: #3018e9;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+.signuplink{
+  margin-top: 15px;
+}
+
+.signuplink a{
+  text-decoration: none;
+  color: rgb(13, 13, 82);
+  font-weight: bold;
+  
+}
+.signuplink a:hover{
+  text-decoration:underline;
+  color: rgb(242, 242, 246);
+  
+}
+
+
