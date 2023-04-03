@@ -1,4 +1,45 @@
 <div class="container">
+  <div class="introbox">
+    <div class="logo">
+      <h1>Musion</h1>
+    </div>
+    <div class="intro">
+      <h1>The ultimate destination of your Music</h1>
+    </div>
+
+  </div>
+  
+  <div class="signup" >
+    <form (submit)="submit()">
+      <h3>Sign up</h3>
+  
+      <label for="email">Email</label>
+      <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
+  
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" name="password" [(ngModel)]=password />
+  
+      <button >Sign up</button>
+      <div class="signuplink">
+          <p>Already have an account? <a routerLink="/login"> Login</a></p>
+      </div>
+      <!-- <div class="social">
+        <div class="go"><i class="fab fa-google"></i> Google</div>
+        <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+      </div> -->
+    </form>
+  </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+<!-- <div class="container">
     <form (submit)="submit()">
       <h3>Sign Up Here</h3>
   
@@ -18,4 +59,4 @@
         <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
       </div>
     </form>
-  </div>
+  </div> -->

@@ -26,6 +26,11 @@ submit(){
   this.password;
 
 }
-
+signInwithGoogle(){
+  this.authservice.signInwithGoogle()
+}
+signInwithFB(){
+  this.authservice.signInwithFB()
+}
 
 }

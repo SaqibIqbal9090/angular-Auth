@@ -1,49 +1,51 @@
-.tab-group{
-    margin-left: 37px;
-     margin-right: 17px }
+.tab-group {
+  margin-left: 37px;
+  margin-right: 17px;
+}
 
-.content{
-    display: flex;
-    margin: 16px;
-    max-height:calc(90vh - 98px);
-    margin-left: 35px;
-    color: black;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    overflow: auto;
-    
-  
+.content {
+  display: flex;
+  margin: 16px;
+  max-height: calc(88vh - 98px);
+  margin-left: 35px;
+  color: black;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .content1 {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;  
-  
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  background-color: rgb(238, 235, 235);
 }
-.songslist{
-    position: relative;
-    width: 170;
-    height: 230px;
-   margin: 20px;
-   margin-left: 45px;
-    text-align: center;
-    overflow: auto;
+.songslist {
+  position: relative;
+  width: 170;
+  height: 230px;
+  margin: 20px;
+  margin-left: 45px;
+  text-align: center;
+  overflow: auto;
 
-    cursor: pointer;
+  cursor: pointer;
 }
-.player{
-    background-color:   rgb(15,33,54);
-    padding: 8px;
-    width: 94%;
-    margin-left: 39px;
-    border: 5px solid  rgb(15,33,54);
-    border-radius: 10px;
+.player {
+  background-color: rgb(3, 40, 82);
+  padding: 6px;
+  max-width: 95%;
+  border: none;
+  margin-left: 39px;
+  border-radius: 10px;
+  margin-right: 20px;
 }
 audio {
-    width: 100%;
-    height: 30px;
-    box-sizing: border-box;
-  }
+  position: relative;
+  height: 40px;
+  width: 100%;
+  margin-top: 4px;
+}
   audio::-webkit-media-controls-panel{
     background-color: rgb(255, 255, 255);
 }

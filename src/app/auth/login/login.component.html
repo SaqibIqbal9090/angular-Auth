@@ -11,7 +11,7 @@
   
   <div class="login" >
     <form (submit)="submit()">
-      <h3>Login Here</h3>
+      <h3>Login</h3>
   
       <label for="email">Email</label>
       <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
@@ -21,13 +21,20 @@
   
       <button >Login</button>
       <div class="signuplink">
-          <p>Already have an account? <a routerLink="/signup">Sign Up</a></p>
-          <span>OR</span>
+          <p>Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+          
       </div>
-      <!-- <div class="social">
-        <div class="go"><i class="fab fa-google"></i> Google</div>
-        <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
-      </div> -->
+      <span style="margin-left: 45%;" >OR</span>
+      <div class="social">
+        <a (click)="signInwithGoogle()">
+          <div class="go"><i class="fab fa-google"></i> Google</div>
+        </a>
+        <a (click)="signInwithFB()">
+          <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </a>
+        
+        
+      </div>
     </form>
   </div>
     

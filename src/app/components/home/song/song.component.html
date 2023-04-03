@@ -1,11 +1,12 @@
 <div class="content mat-elevation-z4">
   <mat-tab-group class="tab-group" color="accent">
-    <mat-tab class="mat-tab" label="Popular">
+    <mat-tab class="mat-tab" label="Popular ">
       <div class="content1">
         <div
           class="songslist"
-          *ngFor="let song of onlineSongs"
-          (click)="PlaySong(song.url)">
+          *ngFor="let song of popularsongs"
+          (click)="PlaySong(song.url)"
+        >
           <div class="cover">
             <img
               width="170px"
@@ -24,7 +25,7 @@
       <div class="content1">
         <div
           class="songslist"
-          *ngFor="let song of onlineSongs"
+          *ngFor="let song of Trendingsongs"
           (click)="PlaySong(song.url)"
         >
           <div class="cover">
@@ -45,19 +46,19 @@
       <div class="content1">
         <div
           class="songslist"
-          *ngFor="let song of onlineSongs"
-          (click)="PlaySong(song.url)"
+          *ngFor="let tsong of Trendingsongs"
+          (click)="PlaySong(tsong.url)"
         >
           <div class="cover">
             <img
               width="170px"
               height="180px"
-              src="{{ song.cover }}"
+              src="{{ tsong.cover }}"
               alt="cover"
             />
           </div>
           <div class="title">
-            <h3>{{ song.title }}</h3>
+            <h3>{{ tsong.title }}</h3>
           </div>
         </div>
       </div>
@@ -70,8 +71,9 @@
     controls
     #audioPlayers
     autoplay
-    style="width: 90%; margin-left: 70px; outline: none"
   >
     <source src="{{ audioSource }}" />
   </audio>
 </div>
+
+

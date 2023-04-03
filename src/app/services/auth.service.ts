@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import {  GoogleAuthProvider , FacebookAuthProvider} from "@angular/fire/auth/";
 import { AngularFireDatabase,AngularFireList, AngularFireObject } from "@angular/fire/compat/database";
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class AuthService {
      ) {}
 
    createUser(email: any, password: any) {
-    this.Auth.createUserWithEmailAndPassword(email, password)
+    return this.Auth.createUserWithEmailAndPassword(email, password)
       .then((res) => {
         if(res){
         this.router.navigate(['/login']);}
@@ -27,10 +28,10 @@ export class AuthService {
       });
   }
   LoginUser(email: string, password: string) {
-    this.Auth.signInWithEmailAndPassword(email, password)
+   return this.Auth.signInWithEmailAndPassword(email, password)
       .then((res:any) => {
        this.isuserloggedin.next(true)
-        localStorage.setItem('user',JSON.stringify(res.body));
+        localStorage.setItem('user',JSON.stringify(res.user?.uid));
         this.router.navigate(['/home']);
       })
       .catch((err) => {
@@ -38,6 +39,27 @@ export class AuthService {
         alert("Invalid Email or Password");
       });
     }
+signInwithGoogle(){
+  return this.Auth.signInWithPopup(new GoogleAuthProvider).then((res)=>{
+    this.isuserloggedin.next(true)
+        localStorage.setItem('user',JSON.stringify(res.user?.uid));
+        this.router.navigate(['/home']);
+  })
+  .catch((err) => {
+    alert(err)
+  });
+}
+signInwithFB(){
+  return this.Auth.signInWithPopup(new FacebookAuthProvider).then((res:any)=>{
+    this.isuserloggedin.next(true)
+        localStorage.setItem('user',JSON.stringify(res.body));
+        this.router.navigate(['/home']);
+  })
+  .catch((err) => {
+    alert(err)
+  });
+}
+    
     reload(){
       if (localStorage.getItem('user')) {
         this.isuserloggedin.next(true)
@@ -56,9 +78,13 @@ export class AuthService {
       })
     }
 
-    fetchSongs(){
+    fetchTrendingSongs(){
      const itemsRef: AngularFireList<any> =this.db.list('Trending');
      return itemsRef
     }
+    fetchPopularSongs(){
+      const itemsRef: AngularFireList<any> =this.db.list('Popular');
+      return itemsRef
+     }
 
   }

@@ -1,5 +1,6 @@
 import { Component ,ElementRef,EventEmitter,OnInit, Output, ViewChild} from '@angular/core';
 import { AuthService } from "src/app/services/auth.service";
+import { AudioPlayerComponent } from 'ngx-audio-player';
 
 @Component({
   selector: 'app-song',
@@ -9,18 +10,26 @@ import { AuthService } from "src/app/services/auth.service";
 export class SongComponent implements OnInit {
   constructor(private songsservice:AuthService){}
   
-  onlineSongs:any=[];
+  popularsongs:any=[];
+  Trendingsongs:any=[];
   currentSongIndex: number = 0;
 
   ngOnInit(): void {
-    this.getsongs();
+    this.getPopularsongs();
+    this.getTrendingsongs();
   }
 
 
-  getsongs(){
-    this.songsservice.fetchSongs().valueChanges().subscribe((result)=>{
-      this.onlineSongs=result
-      console.log(this.onlineSongs)
+  getPopularsongs(){
+    this.songsservice.fetchPopularSongs().valueChanges().subscribe((result)=>{
+      this.popularsongs=result
+      console.log(this.popularsongs)
+     })
+  }
+  getTrendingsongs(){
+    this.songsservice.fetchTrendingSongs().valueChanges().subscribe((result)=>{
+      this.Trendingsongs=result
+      console.log(this.Trendingsongs)
      })
   }
   @ViewChild('audioPlayers') audioPlayer!: ElementRef<any>;
@@ -31,4 +40,5 @@ export class SongComponent implements OnInit {
     this.audioPlayer.nativeElement.play();
   }
 
+  
 }

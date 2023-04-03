@@ -22,10 +22,13 @@ import {  MatToolbarModule} from "@angular/material/toolbar";
 import {  MatSidenavModule} from "@angular/material/sidenav";
 import { AboutComponent } from './components/home/about/about.component';
 import { SongComponent } from './components/home/song/song.component';
+import {MatSliderModule} from '@angular/material/slider';
 import {MatTabsModule} from '@angular/material/tabs';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+
+
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
     FormsModule,
     MatIconModule,
     MatTabsModule,
+    MatSliderModule,
     MatSidenavModule,
     FlexLayoutModule,
     MatButtonModule,
@@ -57,7 +61,8 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
     BrowserAnimationsModule,
     provideAnalytics(() => getAnalytics()),
     provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging())
+    provideMessaging(() => getMessaging()),
+    
   ],
   providers: [
     ScreenTrackingService,UserTrackingService
